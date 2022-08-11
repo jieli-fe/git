@@ -76,7 +76,8 @@ git 操作记录
 * [在commit log中查找相关内容](#在commit-log中查找相关内容)
 * [把暂存区的指定file放到工作区中](#把暂存区的指定file放到工作区中)
 * [强制推送](#强制推送)
-* [联系我](#联系我)
+* [已被版本控制的文件不提交](#已被版本控制的文件不提交)
+
 
 ## 展示帮助信息
 ```sh
@@ -538,6 +539,16 @@ git rm <file_path>
 ## 删除一个已经被 git 关联的文件
 ```sh
 git rm --cached <file_path>
+```
+
+## 已被版本控制的文件不提交
+```sh
+# 执行命令将db.php加入不提交队列
+git update-index --assume-unchanged include/db.php
+
+# 执行命令将db.php取消加入不提交队列
+git update-index --no-assume-unchanged include/db.php
+
 ```
 
 **[⬆ 返回顶部](#目录)**
